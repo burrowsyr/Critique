@@ -1,3 +1,9 @@
+# Critique
+
+Project clone from [angular2-seed](https://github.com/mgechev/angular2-seed).
+
+Following the readme from this project.
+
 # Introduction
 
 [![Angular 2 Style Guide](https://mgechev.github.io/angular2-style-guide/images/badge.svg)](https://github.com/mgechev/angular2-style-guide)
