@@ -2,20 +2,22 @@
   "name": "critique",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "tsc && concurrently \"tsc -w\" \"lite-server\" ",
+    "docker-build": "docker build -t ng2-quickstart .",
+    "e2e": "tsc && concurrently \"http-server\" \"protractor protractor.config.js\"",
+    "lint": "tslint ./app/**/*.ts -t verbose",
+    "lite": "lite-server",
+    "postinstall": "typings install",
+    "test": "tsc && concurrently \"tsc -w\" \"karma start karma.conf.js\"",
+    "tsc": "tsc",
+    "tsc:w": "tsc -w",
+    "typings": "typings",
+    "webdriver:update": "webdriver-manager update"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/burrowsyr/Critique.git"
-  },
+  "keywords": [],
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/burrowsyr/Critique/issues"
-  },
-  "homepage": "https://github.com/burrowsyr/Critique#readme",
   "dependencies": {
     "@angular/common":  "2.0.0-rc.1",
     "@angular/compiler":  "2.0.0-rc.1",
@@ -38,7 +40,22 @@
   },
   "devDependencies": {
     "concurrently": "^2.0.0",
+    "lite-server": "^2.2.0",
     "typescript": "^1.8.10",
-    "typings":"^0.8.1"
-  }
+    "typings": "^0.8.1",
+
+    "canonical-path": "0.0.2",
+    "http-server": "^0.9.0",
+    "tslint": "^3.7.4",
+    "lodash": "^4.11.1",
+    "jasmine-core": "~2.4.1",
+    "karma": "^0.13.22",
+    "karma-chrome-launcher": "^0.2.3",
+    "karma-cli": "^0.1.2",
+    "karma-htmlfile-reporter": "^0.2.2",
+    "karma-jasmine": "^0.3.8",
+    "protractor": "^3.3.0",
+    "rimraf": "^2.5.2"
+  },
+  "repository": {}
 }
