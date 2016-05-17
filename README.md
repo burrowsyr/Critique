@@ -1,6 +1,6 @@
 # Critique
 
-Skeleton from (Angular 2 Quickstart)[https://github.com/angular/quickstart]
+Skeleton from [Angular 2 Quickstart](https://github.com/angular/quickstart)
 
 ## Install npm packages
 
