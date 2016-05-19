@@ -20,5 +20,5 @@ We used [angular2-seed](https://github.com/mgechev/angular2-seed) as project sta
 - Has autoprefixer and css-lint support.
 
 ### Server part
-- Sample unit tests with Mocha and Chai.
+- Sample unit tests with jasmine-node
 - Express

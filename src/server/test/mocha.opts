@@ -1,3 +1,0 @@
---require src/server/test/setup
---recursive
-src/server
