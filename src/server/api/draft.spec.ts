@@ -1,6 +1,3 @@
-/**
- * Created by pellerinm on 19/05/2016.
- */
 
 import {Draft} from './draft';
 
