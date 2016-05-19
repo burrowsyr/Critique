@@ -40,7 +40,6 @@ dist
 dev
 docs
 lib
-test
 tmp
 
 gulpfile.js
