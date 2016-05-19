@@ -1,5 +1,4 @@
 import * as express from 'express';
-import * as bodyParser from 'body-parser';
 
 class Server {
   public app:express.Application;
@@ -12,3 +11,5 @@ class Server {
     this.app = express();
   }
 }
+
+module.exports = Server.bootstrap().app;
