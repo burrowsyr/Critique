@@ -40,8 +40,9 @@ dist
 dev
 docs
 lib
-test
 tmp
+src/server/**/*.js
+src/server/**/*.js.map
 
 gulpfile.js
 gulpfile.js.map
