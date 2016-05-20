@@ -133,4 +133,9 @@ module.exports = function(config) {
     config.browsers = ['Chrome_travis_ci'];
     config.singleRun = true;
   }
+  
+  if (process.env.JENKINS_URL) {
+    config.browsers = ['PhantomJS'];
+    config.singleRun = true;
+  }
 };
