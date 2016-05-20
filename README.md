@@ -83,3 +83,6 @@ npm run start.server
 # this command compile typescript files, run tslint and launch the tests
 npm run test.server
 ```
+
+## Jenkins
+Job **Critique - Pull Request Checker** launch backend tests and then front end unit test.
