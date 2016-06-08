@@ -2,6 +2,7 @@ var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var helpers = require('./helpers');
+var styleLintPlugin = require('stylelint-webpack-plugin');
 
 module.exports = {
   entry: {
@@ -42,6 +43,9 @@ module.exports = {
   },
 
   plugins: [
+    new styleLintPlugin({
+      files: '{public,src}/**/*.css'
+    }),
     new webpack.optimize.CommonsChunkPlugin({
       name: ['app', 'vendor', 'polyfills']
     }),

@@ -9,7 +9,8 @@
     "start": "webpack-dev-server --inline --progress --port 8080",
     "test": "karma start",
     "build": "rimraf dist && webpack --config config/webpack.prod.js --progress --profile --bail",
-    "postinstall": "typings install"
+    "postinstall": "typings install",
+    "tslint": "tslint -c ./tslint.json ./src/**/*.ts"
   },
   "author": "Burrows Front End Team",
   "dependencies": {
@@ -26,6 +27,7 @@
     "zone.js": "0.6.12"
   },
   "devDependencies": {
+    "codelyzer": "0.0.22",
     "css-loader": "^0.23.1",
     "extract-text-webpack-plugin": "^1.0.1",
     "file-loader": "^0.8.5",
@@ -42,7 +44,10 @@
     "raw-loader": "^0.5.1",
     "rimraf": "^2.5.2",
     "style-loader": "^0.13.1",
+    "stylelint-config-standard": "^8.0.0",
+    "stylelint-webpack-plugin": "^0.2.0",
     "ts-loader": "^0.8.1",
+    "tslint": "^3.10.2",
     "typescript": "^1.8.9",
     "typings": "^1.0.4",
     "webpack": "^1.12.14",

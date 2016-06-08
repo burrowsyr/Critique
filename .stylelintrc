@@ -16,13 +16,13 @@
     "declaration-colon-space-after": "always",
     "declaration-no-important": true,
 
-    "font-family-name-quotes": "single-where-recommended",
+    "font-family-name-quotes": "always-where-required",
 
     "function-comma-newline-after": "never-multi-line",
     "function-comma-newline-before": "never-multi-line",
     "function-comma-space-after": "always",
     "function-max-empty-lines": 0,
-    "function-url-quotes": "none",
+    "function-url-quotes": "never",
 
     "keyframe-declaration-no-important": true,
     "max-nesting-depth": 1,
