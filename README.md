@@ -1,6 +1,6 @@
 # Critique
 
-*TODO: write a little description of Critique purpose.*
+A web tool to manage pull requests
 
 ## Project setup
 
