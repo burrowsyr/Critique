@@ -1,14 +1,13 @@
-var webpack = require('webpack');
-var HtmlWebpackPlugin = require('html-webpack-plugin');
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
-var helpers = require('./helpers');
-var styleLintPlugin = require('stylelint-webpack-plugin');
+const webpack = require('webpack'),
+  HtmlWebpackPlugin = require('html-webpack-plugin'),
+  ExtractTextPlugin = require('extract-text-webpack-plugin'),
+  helpers = require('./helpers'),
+  styleLintPlugin = require('stylelint-webpack-plugin');
 
 module.exports = {
   entry: {
     'polyfills': './src/polyfills.ts',
-    'vendor': './src/vendor.ts',
-    'app': './src/main.ts'
+    'vendor': './src/vendor.ts'
   },
 
   resolve: {
@@ -23,7 +22,9 @@ module.exports = {
       },
       {
         test: /\.html$/,
-        loader: 'html'
+        loaders: [
+          'html'
+        ]
       },
       {
         test: /\.(png|jpe?g|gif|svg|woff|woff2|ttf|eot|ico)$/,
@@ -37,7 +38,9 @@ module.exports = {
       {
         test: /\.css$/,
         include: helpers.root('src', 'app'),
-        loader: 'raw'
+        loaders: [
+          'raw'
+        ]
       }
     ]
   },
@@ -47,11 +50,13 @@ module.exports = {
       files: '{public,src}/**/*.css'
     }),
     new webpack.optimize.CommonsChunkPlugin({
-      name: ['app', 'vendor', 'polyfills']
+      name: ['vendor', 'polyfills']
     }),
 
     new HtmlWebpackPlugin({
       template: 'src/index.html'
-    })
+    }),
+
+    new ExtractTextPlugin('[name].css')
   ]
 };
