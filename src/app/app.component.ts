@@ -1,52 +1,17 @@
-import {Component, Directive, ElementRef, Renderer} from '@angular/core';
+import {Component} from '@angular/core';
 import {RouteConfig, ROUTER_DIRECTIVES} from '@angular/router-deprecated';
 import {Http} from '@angular/http';
 
-// templateUrl example
-// import {Home} from './home';
-//
-/////////////////////////
-// ** Example Directive
-// Notice we don't touch the Element directly
+import {AboutComponent} from './+about';
+import {HomeComponent} from './+home';
 
-@Directive({
-  selector: '[x-large]'
-})
-export class XLarge {
-  constructor(element: ElementRef, renderer: Renderer) {
-    // ** IMPORTANT **
-    // we must interact with the dom through -Renderer-
-    // for webworker/server to see the changes
-    renderer.setElementStyle(element.nativeElement, 'fontSize', 'x-large');
-    // ^^
-  }
-}
+import {XLargeDirective} from './shared';
 
-/////////////////////////
-// ** Example Components
-@Component({
-  selector: 'home',
-  template: `
-    <div>This is the "Home" page</div>
-  `
-})
-export class Home { }
-
-@Component({
-  selector: 'about',
-  template: `
-    <div>This is the "About" page</div>
-  `
-})
-export class About { }
-
-/////////////////////////
-// ** MAIN APP COMPONENT **
 @Component({
   selector: 'app', // <app></app>
   directives: [
     ...ROUTER_DIRECTIVES,
-    XLarge
+    XLargeDirective
   ],
   styles: [`
     * { padding:0; margin:0; }
@@ -91,13 +56,13 @@ export class About { }
   `
 })
 @RouteConfig([
-  { path: '/', component: Home, name: 'Home', useAsDefault: true },
-  { path: '/home', component: Home, name: 'Home' },
-  { path: '/about', component: About, name: 'About' },
+  { path: '/', component: HomeComponent, name: 'Home', useAsDefault: true },
+  { path: '/home', component: HomeComponent, name: 'Home' },
+  { path: '/about', component: AboutComponent, name: 'About' },
   { path: '/**', redirectTo: ['Home'] }
 ])
-export class App {
-  title: string = 'ftw';
+export class AppComponent {
+  title: string = 'is awesome';
   data = {};
   server: string;
 

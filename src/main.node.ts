@@ -9,7 +9,7 @@ import {
 } from 'angular2-universal';
 
 // Application
-import {App} from './app/app.component';
+import {AppComponent} from './app/app.component';
 
 export function ngApp(req, res) {
   let baseUrl = '/';
@@ -17,7 +17,7 @@ export function ngApp(req, res) {
 
   let config: ExpressEngineConfig = {
     directives: [
-      App
+      AppComponent
     ],
     platformProviders: [
       {provide: ORIGIN_URL, useValue: 'http://localhost:3000'},
