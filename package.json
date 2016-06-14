@@ -12,6 +12,7 @@
     "build": "webpack",
     "start": "concurrently \"npm run watch\" \"npm run server\"",
     "server": "nodemon dist/server/bundle.js",
+    "test": "karma start",
     "predebug": "npm run build",
     "debug": "node --debug-brk dist/server/bundle.js"
   },
