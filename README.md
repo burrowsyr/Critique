@@ -17,7 +17,9 @@ We used [Angular2 universal starter](https://github.com/angular/universal-starte
 We use [Webpack module bundler](https://webpack.github.io/) to bundle (and build) this project. 
 There is a useful [webpack guide](https://angular.io/docs/ts/latest/guide/webpack.html) in angular 2 documentation, which allows to have a better understanding of how webpack works with angular 2.
 
-[Tslint](https://palantir.github.io/tslint/) is configured to use [codelyzer](https://github.com/mgechev/codelyzer), but it is not a part of the build process yet. You should configure your IDE to use tslint anyway.
+**Configuration to finalize**
+ - [Tslint](https://palantir.github.io/tslint/) is not a part of the build process yet. But it is configured to use [codelyzer](https://github.com/mgechev/codelyzer), and you should configure your IDE to use tslint anyway.
+ - [Stylelint](http://stylelint.io/) is not a part of the build process yet. [styleUrls bug](https://github.com/angular/universal/issues/294) must be fixed before to add stylelint to our build process.  
 
 ## Project structure
 
