@@ -5,6 +5,3 @@ typings
 
 dist
 
-server/**/*.js
-server/**/*.js.map
-
