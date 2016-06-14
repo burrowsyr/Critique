@@ -8,7 +8,8 @@ import {HomeComponent} from './+home';
 import {XLargeDirective} from './shared';
 
 @Component({
-  selector: 'app', // <app></app>
+  moduleId: __filename,
+  selector: 'app',
   directives: [
     ...ROUTER_DIRECTIVES,
     XLargeDirective
@@ -27,33 +28,7 @@ import {XLargeDirective} from './shared';
     main { padding:20px 0; }
     pre { font-size:12px; }
   `],
-  template: `
-  <h3 id="universal">Angular2 Universal</h3>
-  <nav>
-    <a [routerLink]=" ['./Home'] ">Home</a>
-    <a [routerLink]=" ['./About'] ">About</a>
-  </nav>
-  <div class="hero-universal">
-    <div class="inner-hero">
-      <div>
-        <span x-large>Universal JavaScript {{ title }}!</span>
-      </div>
-
-      Two-way binding: <input type="text" [value]="title" (input)="title = $event.target.value" autofocus>
-      <br><br>
-
-      <strong>Async data call return value:</strong>
-      <pre>{{ data | json }}</pre>
-
-      <strong>Router-outlet:</strong>
-      <main>
-        <router-outlet></router-outlet>
-      </main>
-
-      <blockquote>{{ server }}</blockquote>
-    </div>
-  </div>
-  `
+  templateUrl: './app.component.html'
 })
 @RouteConfig([
   { path: '/', component: HomeComponent, name: 'Home', useAsDefault: true },

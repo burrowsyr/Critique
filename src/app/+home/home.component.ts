@@ -6,9 +6,6 @@ import {Component} from '@angular/core';
   styleUrls: [
     // './home.style.css' // doesn't work on the server atm
   ],
-  // templateUrl: './home.template.html' // doesn't work on the server atm
-  template: `
-    <div>This is the "Home" page</div>
-  `
+  templateUrl: './home.template.html'
 })
 export class HomeComponent { }
