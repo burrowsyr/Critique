@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {RouteConfig, ROUTER_DIRECTIVES} from '@angular/router-deprecated';
+import { ROUTER_DIRECTIVES } from '@angular/router';
 import {Http} from '@angular/http';
 
 import {AboutComponent} from './+about';
@@ -30,12 +30,6 @@ import {XLargeDirective} from './shared';
   `],
   templateUrl: './app.component.html'
 })
-@RouteConfig([
-  { path: '/', component: HomeComponent, name: 'Home', useAsDefault: true },
-  { path: '/home', component: HomeComponent, name: 'Home' },
-  { path: '/about', component: AboutComponent, name: 'About' },
-  { path: '/**', redirectTo: ['Home'] }
-])
 export class AppComponent {
   title: string = 'is awesome';
   data = {};

@@ -1,7 +1,8 @@
 <h3 id="universal">Angular2 Universal</h3>
 <nav>
-  <a [routerLink]=" ['./Home'] ">Home</a>
-  <a [routerLink]=" ['./About'] ">About</a>
+  <a [routerLinkActive]="['active', 'router-link-active']" [routerLink]=" ['./home'] ">Home</a>
+  <a [routerLinkActive]="['active', 'router-link-active']" [routerLink]=" ['./about'] ">About</a>
+
 </nav>
 <div class="hero-universal">
   <div class="inner-hero">
