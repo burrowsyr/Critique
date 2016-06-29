@@ -1,87 +1,57 @@
 # Critique
 
-*TODO: write a little description of Critique purpose.*
+A web tool to manage pull requests.
+
+Critique is developing following [Angular 2 Universal Patterns](https://github.com/angular/universal), which allows us to render our angular 2 app from both client and server sides.
+This [video](https://www.youtube.com/watch?v=TCj_oC3m6_U) explains well what is Angular 2 Universal Patterns (about 15min).
 
 ## Project setup
 
-### Client part
-We used [angular2-seed](https://github.com/mgechev/angular2-seed) as project starter.
-`angular2-seed` provides the following features:
+We used [Angular2 universal starter](https://github.com/angular/universal-starter) to set up our project.
 
-- Allows you to painlessly update the seed tasks of your already existing project.
-- Out of the box ServiceWorkers and AppCache support thanks to the integration with [angular/progressive](https://github.com/angular/progressive).
-- Ready to go, statically typed build system using gulp for working with TypeScript.
-- Production and development builds.
-- Sample unit tests with Jasmine and Karma including code coverage via [istanbul](https://gotwarlost.github.io/istanbul/).
-- End-to-end tests with Protractor.
-- Development server with Livereload.
-- Following the [best practices](https://angular.io/styleguide).
-- Manager of your type definitions using [typings](https://github.com/typings/typings).
-- Has autoprefixer and css-lint support.
+### Known Issues: 
+ - [Prerender does not work with styleUrls](https://github.com/angular/universal/issues/294)
+ - [Angular 2 Universal production ready](https://github.com/angular/universal/issues/247) (not ready for production use yet)
 
-### Server part
-- Sample unit tests with jasmine-node
-- Express
-- node
+### Tooling and useful resources
+We use [Webpack module bundler](https://webpack.github.io/) to bundle (and build) this project. 
+There is a useful [webpack guide](https://angular.io/docs/ts/latest/guide/webpack.html) in angular 2 documentation, which allows to have a better understanding of how webpack works with angular 2.
 
-Unit tests are running with jasmine-node. This way, we use the same technology as the one on front end part. 
-But must of all, that's avoiding us a lot of problem with typescript type definition which are overlaping between frameworks: Mocha use the same `describe` and `it` methods for example.
+**Configuration to finalize**
+ - [Tslint](https://palantir.github.io/tslint/) is not a part of the build process yet. But it is configured to use [codelyzer](https://github.com/mgechev/codelyzer), and you should configure your IDE to use tslint anyway.
+ - [Stylelint](http://stylelint.io/) is not a part of the build process yet. [styleUrls bug](https://github.com/angular/universal/issues/294) must be fixed before to add stylelint to our build process.  
 
-I followed [this article](http://brianflove.com/2016/03/29/typescript-express-node-js/) to have a node server running using express. I didn't set up any route for now as it will be done later on other task.
+## Project structure
+
+*TODO: better description, adding explanations*
+
+```
+/src              
+    /app                //Angular2 application sources
+    /backend            //Backend sources
+    /index.html         //HTML container for the app
+    /main.browser.ts    //bootstart Angular2 application
+    /main.node.ts       //configure Angular2 universal
+    /server.ts          //configure our server
+    /typings.d.ts       //Custom Type Definitions (a lot of comment in there explaining the purpose of this file)
+```
 
 ## Commands
-[Angular2-seed](https://github.com/mgechev/angular2-seed) came with a lot of commands to manage front end part, and I add some others to manage backend part. Here are the main ones:
-
-### Front end dev
-```bash
-# watches your files and uses livereload by default
-npm start
-
-# dev build
-npm run build.dev
-# prod build
-npm run build.prod
-```
-
-### Running Front End tests
 
 ```bash
-npm test
+npm install #installation of dependencies and typings
 
-# Debug - In two different shell windows
-npm run build.test.watch      # 1st window
-npm run karma.start           # 2nd window
+npm run build #clean dist folder and call webpack to bundle client and server parts of the application
 
-# code coverage (istanbul)
-# auto-generated at the end of `npm test`
-# view coverage report:
-npm run serve.coverage
+npm run watch #build client and server parts of the application and watch for changes in sources
 
-# e2e (aka. end-to-end, integration) - In three different shell windows
-# Make sure you don't have a global instance of Protractor
+npm run server #launch our express server using nodemon
 
-# npm run webdriver-update <- You will need to run this the first time
-npm run webdriver-start
-npm run serve.e2e
-npm run e2e
+npm start #bundle and watch client and server part of the application, and run our express server. Server restart automatically when sources changed, but navigator doesn't refresh the page by itself.
 
-# e2e live mode - Protractor interactive mode
-# Instead of last command above, you can use:
-npm run e2e.live
-```
+npm run debug #run the server in debug mode
 
-### Backend
-```bash
-# Compile typescript files and run tslint
-npm run tsc.server
- 
-# Start node server on http://localhost:3000
-# this command compile typescript files and run tslint before to start the server
-npm run start.server
-
-# Running unit tests 
-# this command compile typescript files, run tslint and launch the tests
-npm run test.server
+npm test #run client unit tests using karma
 ```
 
 ## Jenkins
