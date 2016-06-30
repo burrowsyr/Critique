@@ -5,13 +5,14 @@ A web tool to manage pull requests.
 Critique is developing following [Angular 2 Universal Patterns](https://github.com/angular/universal), which allows us to render our angular 2 app from both client and server sides.
 This [video](https://www.youtube.com/watch?v=TCj_oC3m6_U) explains well what is Angular 2 Universal Patterns (about 15min).
 
+Currently, this app use:
+ - Angular 2.0.0-rc.3
+ - Angular router 3.0.0-alpha.8
+ - Angular universal 0.104.1
+
 ## Project setup
 
 We used [Angular2 universal starter](https://github.com/angular/universal-starter) to set up our project.
-
-### Known Issues: 
- - [Prerender does not work with styleUrls](https://github.com/angular/universal/issues/294)
- - [Angular 2 Universal production ready](https://github.com/angular/universal/issues/247) (not ready for production use yet)
 
 ### Tooling and useful resources
 We use [Webpack module bundler](https://webpack.github.io/) to bundle (and build) this project. 

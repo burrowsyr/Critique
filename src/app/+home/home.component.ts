@@ -4,7 +4,7 @@ import {Component} from '@angular/core';
   moduleId: __filename,
   selector: 'home',
   styleUrls: [
-    // './home.style.css' // doesn't work on the server atm
+    'home.style.css'
   ],
   templateUrl: './home.template.html'
 })
