@@ -8,7 +8,9 @@ var commonConfig = {
   module: {
     loaders: [
       // TypeScript
-      { test: /\.ts$/, loader: 'ts-loader' },
+      { test: /\.ts$/, loaders: ['ts-loader', 'angular2-template-loader'] },
+      { test: /\.html$/, loader: 'raw-loader' },
+      { test: /\.css$/, loader: 'raw-loader' },
       { test: /\.json$/, loader: 'raw-loader' }
     ],
     preLoaders: [
@@ -29,7 +31,7 @@ var commonConfig = {
 
 var clientConfig = {
   target: 'web',
-  entry: './src/main.browser',
+  entry: './src/client',
   output: {
     path: root('dist/client')
   },
@@ -47,7 +49,8 @@ var serverConfig = {
   target: 'node',
   entry: './src/server', // use the entry file of the node server if everything is ts rather than es5
   output: {
-    path: root('dist/server')
+    path: root('dist/server'),
+    libraryTarget: 'commonjs2'
   },
   externals: checkNodeImport,
   node: {

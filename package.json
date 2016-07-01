@@ -10,6 +10,7 @@
     "watch": "webpack --watch",
     "prebuild": "rimraf dist",
     "build": "webpack",
+    "prestart": "npm run build",
     "start": "concurrently \"npm run watch\" \"npm run server\"",
     "server": "nodemon dist/server/bundle.js",
     "test": "karma start",
